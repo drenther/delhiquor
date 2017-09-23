@@ -55,8 +55,8 @@ export const LiquorForm = props => {
 						min={30}
 						onChange={props.handleMin}
 						formatter={val =>
-							`₹ ${`${val}`.replace(/(\d)(?=(\d\d)+\d$)/g, '$1,')}`}
-						parser={val => val.replace(/\₹\s?|(,*)/g, '')}
+							`Rs. ${`${val}`.replace(/(\d)(?=(\d\d)+\d$)/g, '$1,')}`}
+						parser={val => val.replace(/\Rs.\s?|(,*)/g, '')}
 					/>
 					<Input
 						style={{
@@ -76,8 +76,8 @@ export const LiquorForm = props => {
 						max={1200000}
 						onChange={props.handleMax}
 						formatter={val =>
-							`₹ ${`${val}`.replace(/(\d)(?=(\d\d)+\d$)/g, '$1,')}`}
-						parser={val => val.replace(/\₹\s?|(,*)/g, '')}
+							`Rs. ${`${val}`.replace(/(\d)(?=(\d\d)+\d$)/g, '$1,')}`}
+						parser={val => val.replace(/\Rs.\s?|(,*)/g, '')}
 					/>
 				</InputGroup>
 			</div>
@@ -91,9 +91,9 @@ export const LiquorForm = props => {
 							.indexOf(inputValue.toUpperCase()) !== -1}
 					style={{ width: 220 }}
 					placeholder="Got some brand in mind?"
-					value={props.query}
 					onChange={props.handleSearch}
 					size="large"
+					allowClear={true}
 				/>
 			</div>
 		</div>

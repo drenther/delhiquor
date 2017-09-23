@@ -56,7 +56,7 @@ class App extends Component {
 		this.setState({ cat, subset });
 	};
 
-	_search = val => {
+	_search = (val = '') => {
 		const query = val.toUpperCase();
 		const subset = this._calculateSubset(
 			Object.assign({}, this.state, { query })
